@@ -1,1 +1,2 @@
-Lab Assignments for ECE-13 
+# ECE-13: Lab Assignments Repository
+
