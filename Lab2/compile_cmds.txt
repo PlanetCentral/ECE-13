@@ -1,0 +1,4 @@
+Compile:
+gcc -Wall -Wextra -g3 -mconsole Lab2_main.c calculator.c BOARD.c -o output\calculator.exe
+Run:
+.\output\calculator.exe
