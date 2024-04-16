@@ -39,7 +39,7 @@ void CalculatorRun(void)
     char operation = '0';
     while (operation != 'q')
     {
-        printf("\nSelect an operation (*, /, +, -, m, a, c, f, t, r, q): ");
+        printf("\nSelect an operation (*, /, +, -, m, a, c, f, t, q, r): ");
         scanf(" %c", &operation); // Spaces before %c for any newline chars
 
         double op1, op2, result;
