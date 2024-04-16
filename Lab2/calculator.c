@@ -1,3 +1,8 @@
+/*
+ * File: calculator.c
+ * Author: Rahil Prakash (rprakas2@ucsc.edu), Jonah Guardino (jdguardi@ucsc.edu)
+ * Created on April 08, 2023, 9:02 PM
+ */
 // Standard libraries
 #include <stdio.h>
 #include <math.h>
@@ -33,7 +38,7 @@ void PromptForInput(const char *prompt, double *operand);
 
 void CalculatorRun(void)
 {
-    printf("\n\nWelcome to Rahil's calculator program! Compiled at %s %s\n", __DATE__, __TIME__);
+    printf("\n\nWelcome to Rahil and Jonah's calculator program! Compiled at %s %s\n", __DATE__, __TIME__);
 
     // Main calculator loop
     char operation = '0';
