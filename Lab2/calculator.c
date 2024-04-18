@@ -116,8 +116,7 @@ void CalculatorRun(void)
     }
 
     BOARD_End();
-    while (1)
-        ; // To ensure the program doesn't end
+    while (1); 
 }
 
 // Function for handling input errors user prompts
