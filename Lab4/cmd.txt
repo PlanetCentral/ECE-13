@@ -1,0 +1,14 @@
+gcc -c stack.c -o stack.o
+gcc -c stack_test.c -o stack_test.o
+gcc -c rpn_test.c -o rpn_test.o
+gcc -c rpn.c -o rpn.o
+gcc -c BOARD.c -o BOARD.o
+gcc -c Lab04_main.c -o Lab04_main.o
+EXE COMPILE
+gcc rpn_test.o rpn.o BOARD.o stack.o -o rpn_test
+gcc stack_test.o stack.o BOARD.o -o stack_test  
+gcc Lab04_main.o rpn.o stack.o BOARD.o -o Lab04_main
+run tests
+./stack_test
+./rpn_test
+./Lab04_main
