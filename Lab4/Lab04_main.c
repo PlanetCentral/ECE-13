@@ -44,36 +44,35 @@ int main() {
             returnVal = RPN_Evaluate(rpn_sentence, &result);
         }
 
-        // Various error cases (5/5)
-        switch (returnVal) {
-            case 1:
-                sprintf(printString, "ERROR: There is no more room on the stack.\n");
-                break;
-            case 2:
-                sprintf(printString, "ERROR: There aren't enough operands before the operator.\n");
-                break;
-            case 3:
-                sprintf(printString, "ERROR: Invalid characters used in the RPN String.\n");
-                break;
-            case 4:
-                sprintf(printString, "ERROR: Invalid RPN calculation; divided by 0.\n");
-                break;
-            case 5:
-                sprintf(printString, "ERROR: Invalid RPN calculation; no items on the stack.\n");
-                break;
-            case 6:
-                sprintf(printString, "ERROR: Invalid RPN calculation; too many items on the stack.\n");
-                break;
-            case ERROR_EXCEED_INPUT_LENGTH:
-                sprintf(printString, "ERROR: Input string length exceeds 60 characters. At maximum please enter 60 characters.\n");
-                break;
-            default:
-                sprintf(printString, "Result = %lf\n", result);
-                break;
+        // Various error cases
+        switch (returnVal)
+        {
+            // Stack overflow
+        case 1:
+            sprintf(printString, "Error: Stack overflow.\n");
+            break;
+            //Invalid char
+        case 2:
+            sprintf(printString, "Error: Invalid character in the RPN string.\n");
+            break;
+            // Divide by 0
+        case 3:
+            sprintf(printString, "Error: Division by 0 attempted.\n");
+            break;
+            // Stack underflow
+        case 4:
+            sprintf(printString, "Error: Stack underflow.\n");
+            break;
+            // >60 chars
+        case 5:
+            sprintf(printString, "Error: Input exceeds maximum length of 60 characters. Please at maximum, enter 60 characters.\n");
+            break;
+            // None
+        default:
+            sprintf(printString, "Result = %lf\n", result);
+            break;
         }
-
         printf("%s", printString);
     }
-
     return 0;
 }
