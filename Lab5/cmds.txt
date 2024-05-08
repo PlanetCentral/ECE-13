@@ -1,0 +1,6 @@
+gcc -c LinkedList.c -o LinkedList.o
+gcc -c LinkedListTest.c -o LinkedListTest.o
+gcc -c sort.c -o sort.o                    
+gcc -c BOARD.c -o BOARD.o
+gcc LinkedList.o LinkedListTest.o BOARD.o -o LinkedListTest
+gcc LinkedList.o sort.o BOARD.o -o sort
