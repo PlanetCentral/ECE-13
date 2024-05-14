@@ -8,6 +8,7 @@
 #include "LinkedList.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // Function prototypes for test functions
 void testLinkedListNew();
@@ -69,16 +70,19 @@ void testLinkedListRemove()
 {
     printf("\nTesting LinkedListRemove...\n");
     ListItem *item = LinkedListNew("To be removed"); // setup
-    char *data = LinkedListRemove(item);
-    if (data && !item->nextItem && !item->previousItem) // validate
+
+    char *data = LinkedListRemove(item); // item is now freed and should not be accessed
+
+    // Validate that the data returned is correct
+    if (data && strcmp(data, "To be removed") == 0)
     {
-        printf("PASS: LinkedListRemove removed the item correctly.\n");
+        printf("PASS: LinkedListRemove removed the item correctly and returned correct data.\n");
     }
     else
     {
         printf("FAIL: LinkedListRemove failed.\n");
     }
-    free(item); // Cleanup
+    // Do not free 'item' or access it after this point
 }
 
 void testLinkedListSize()
